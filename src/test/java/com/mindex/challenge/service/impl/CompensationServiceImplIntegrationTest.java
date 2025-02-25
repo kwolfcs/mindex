@@ -39,6 +39,7 @@ public class CompensationServiceImplIntegrationTest {
     @Before
     public void setup() {
         compensationRepository.deleteAll();
+        employeeRepository.deleteAll();
         compensationUrl = "/compensation";
         compensationByEmployeeUrl = "/compensation/e/{id}";
     }

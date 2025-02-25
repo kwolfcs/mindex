@@ -41,6 +41,7 @@ public class ReportingStructureServiceImplIntegrationTest {
     @Before
     public void setup() {
         reportingStructureUrl = "http://localhost:" + port + "/employee/{id}/reportingStructure";
+        employeeRepository.deleteAll();
     }
 
     @Test
@@ -53,6 +54,9 @@ public class ReportingStructureServiceImplIntegrationTest {
     public void testNoReportsIntegration() {
         Employee testEmployee = new Employee();
         testEmployee.setEmployeeId("62c1084e-6e34-4630-93fd-9153afb65309");
+        testEmployee.setDirectReports(null);
+
+        employeeRepository.insert(testEmployee);
 
         ReportingStructure testReportingStructure = new ReportingStructure(testEmployee, 0);
 
@@ -63,10 +67,27 @@ public class ReportingStructureServiceImplIntegrationTest {
 
     @Test
     public void testWithReportsIntegration() {
-        Employee testEmployee = new Employee();
-        testEmployee.setEmployeeId("16a596ae-edd3-4847-99fe-c4518e82c86f");
+        Employee testEmployee1 = new Employee();
+        Employee testEmployee2 = new Employee();
+        Employee testEmployee3 = new Employee();
 
-        ReportingStructure testReportingStructure = new ReportingStructure(testEmployee, 4);
+        testEmployee1.setEmployeeId("16a596ae-edd3-4847-99fe-c4518e82c86f");
+        testEmployee2.setEmployeeId("b7839309-3348-463b-a7e3-5de1c168beb3");
+        testEmployee3.setEmployeeId("03aa1462-ffa9-4978-901b-7c001562cf6f");
+
+        List<Employee> report1 = new ArrayList<>();
+        report1.add(testEmployee2);
+        List<Employee> report2 = new ArrayList<>();
+        report2.add(testEmployee3);
+
+        testEmployee1.setDirectReports(report1);
+        testEmployee2.setDirectReports(report2);
+
+        employeeRepository.insert(testEmployee1);
+        employeeRepository.insert(testEmployee2);
+        employeeRepository.insert(testEmployee3);
+
+        ReportingStructure testReportingStructure = new ReportingStructure(testEmployee1, 2);
 
         ReportingStructure readReportingStructure = restTemplate.getForEntity(reportingStructureUrl, ReportingStructure.class, "16a596ae-edd3-4847-99fe-c4518e82c86f").getBody();
         assertEquals(testReportingStructure.employee().getEmployeeId(), readReportingStructure.employee().getEmployeeId());

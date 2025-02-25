@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:14:25" hostname="LAPTOP-NCH72P9J" time="0.024">
+<testsuite name="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:54:57" hostname="LAPTOP-NCH72P9J" time="0.026">
   <properties/>
-  <testcase name="testNoReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.006"/>
+  <testcase name="testNoReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.004"/>
   <testcase name="testReportEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
-  <testcase name="testCycleDetection" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.004"/>
-  <testcase name="testWithReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.004"/>
-  <testcase name="testEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.004"/>
-  <system-out><![CDATA[2025-02-24T19:14:25.257-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:14:25.263-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:14:25.267-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:14:25.271-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [John Lennon]
-2025-02-24T19:14:25.275-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [nonexistent]
+  <testcase name="testCycleDetection" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.006"/>
+  <testcase name="testWithReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
+  <testcase name="testEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
+  <system-out><![CDATA[2025-02-24T19:54:57.218-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
+2025-02-24T19:54:57.223-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
+2025-02-24T19:54:57.228-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
+2025-02-24T19:54:57.234-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [John Lennon]
+2025-02-24T19:54:57.239-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [nonexistent]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

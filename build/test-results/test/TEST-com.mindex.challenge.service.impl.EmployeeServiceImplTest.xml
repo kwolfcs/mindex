@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mindex.challenge.service.impl.EmployeeServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:14:25" hostname="LAPTOP-NCH72P9J" time="0.029">
+<testsuite name="com.mindex.challenge.service.impl.EmployeeServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:54:57" hostname="LAPTOP-NCH72P9J" time="0.027">
   <properties/>
   <testcase name="testReadEmployee" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.004"/>
-  <testcase name="testUpdateEmployee" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.006"/>
+  <testcase name="testUpdateEmployee" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.005"/>
   <testcase name="testCreateEmployee" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.005"/>
   <testcase name="testReadByEmployeeNotFound" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.005"/>
-  <testcase name="testCreateEmployeeDuplicate" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.007"/>
-  <system-out><![CDATA[2025-02-24T19:14:25.222-05:00 DEBUG 8872 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Reading employee with id [null]
-2025-02-24T19:14:25.229-05:00 DEBUG 8872 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@60658389]
-2025-02-24T19:14:25.234-05:00 DEBUG 8872 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@17e66aed]
-2025-02-24T19:14:25.239-05:00 DEBUG 8872 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Reading employee with id [a]
-2025-02-24T19:14:25.246-05:00 DEBUG 8872 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@60739eca]
+  <testcase name="testCreateEmployeeDuplicate" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.006"/>
+  <system-out><![CDATA[2025-02-24T19:54:57.187-05:00 DEBUG 8916 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Reading employee with id [null]
+2025-02-24T19:54:57.192-05:00 DEBUG 8916 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@7d0312a]
+2025-02-24T19:54:57.197-05:00 DEBUG 8916 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@60739eca]
+2025-02-24T19:54:57.203-05:00 DEBUG 8916 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Reading employee with id [a]
+2025-02-24T19:54:57.209-05:00 DEBUG 8916 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@36dc6b9]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

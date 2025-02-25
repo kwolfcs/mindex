@@ -23,6 +23,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee create(Employee employee) {
         LOG.debug("Creating employee [{}]", employee);
 
+        if (employee == null) {
+            employee = new Employee();
+        }
         employee.setEmployeeId(UUID.randomUUID().toString());
 
         try {
