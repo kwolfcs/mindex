@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:14:24" hostname="LAPTOP-NCH72P9J" time="0.189">
+  <properties/>
+  <testcase name="testReadByEmployeeIntegration" classname="com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest" time="0.15"/>
+  <testcase name="testCreateCompensationIntegration" classname="com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest" time="0.025"/>
+  <testcase name="testReadByEmployeeCompensationNotFoundIntegration" classname="com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest" time="0.013"/>
+  <system-out><![CDATA[2025-02-24T19:14:24.449-05:00  INFO 8872 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest]: CompensationServiceImplIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-24T19:14:24.452-05:00  INFO 8872 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest
+2025-02-24T19:14:24.501-05:00 DEBUG 8872 --- [o-auto-1-exec-5] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@361d759e]
+2025-02-24T19:14:24.502-05:00 DEBUG 8872 --- [o-auto-1-exec-5] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@361d759e]
+2025-02-24T19:14:24.518-05:00  INFO 8872 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : adding unique _id index for collection compensation
+2025-02-24T19:14:24.520-05:00  INFO 8872 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : created collection test.compensation
+2025-02-24T19:14:24.538-05:00 DEBUG 8872 --- [o-auto-1-exec-7] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@144b1503]
+2025-02-24T19:14:24.538-05:00 DEBUG 8872 --- [o-auto-1-exec-7] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@144b1503]
+2025-02-24T19:14:24.554-05:00 DEBUG 8872 --- [o-auto-1-exec-9] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@78b005ac]
+2025-02-24T19:14:24.555-05:00 DEBUG 8872 --- [o-auto-1-exec-9] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@78b005ac]
+2025-02-24T19:14:24.570-05:00 DEBUG 8872 --- [o-auto-1-exec-8] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T19:14:24.570-05:00 DEBUG 8872 --- [o-auto-1-exec-8] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+2025-02-24T19:14:24.590-05:00 DEBUG 8872 --- [-auto-1-exec-10] c.m.c.controller.CompensationController  : Received compensations get request for employee [b]
+2025-02-24T19:14:24.591-05:00 DEBUG 8872 --- [-auto-1-exec-10] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [b]
+2025-02-24T19:14:24.617-05:00 DEBUG 8872 --- [o-auto-1-exec-1] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@441d397a]
+2025-02-24T19:14:24.618-05:00 DEBUG 8872 --- [o-auto-1-exec-1] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@441d397a]
+2025-02-24T19:14:24.636-05:00 DEBUG 8872 --- [o-auto-1-exec-2] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T19:14:24.637-05:00 DEBUG 8872 --- [o-auto-1-exec-2] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

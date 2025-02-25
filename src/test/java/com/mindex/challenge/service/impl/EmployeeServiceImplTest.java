@@ -1,86 +1,92 @@
 package com.mindex.challenge.service.impl;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+import com.mindex.challenge.dao.EmployeeRepository;
 import com.mindex.challenge.data.Employee;
-import com.mindex.challenge.service.EmployeeService;
-import org.junit.Before;
+import com.mindex.challenge.exception.DuplicateEntryException;
+import com.mindex.challenge.exception.EmployeeNotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(MockitoJUnitRunner.class)
 public class EmployeeServiceImplTest {
 
-    private String employeeUrl;
-    private String employeeIdUrl;
+    @Mock
+    private EmployeeRepository employeeRepository;
 
-    @Autowired
-    private EmployeeService employeeService;
+    @InjectMocks
+    private EmployeeServiceImpl employeeService;
 
-    @LocalServerPort
-    private int port;
+    @Test
+    public void testCreateEmployee() {
+        Employee employee = new Employee();
+        employee.setEmployeeId("123");
+        when(employeeRepository.insert(any(Employee.class))).thenAnswer(invocation -> {
+            Employee arg = invocation.getArgument(0);
+            arg.setEmployeeId("123");
+            return arg;
+        });
 
-    @Autowired
-    private TestRestTemplate restTemplate;
+        Employee created = employeeService.create(employee);
 
-    @Before
-    public void setup() {
-        employeeUrl = "http://localhost:" + port + "/employee";
-        employeeIdUrl = "http://localhost:" + port + "/employee/{id}";
+        assertNotNull(created);
+        assertEquals("123", created.getEmployeeId());
+
+        verify(employeeRepository).insert(created);
     }
 
     @Test
-    public void testCreateReadUpdate() {
-        Employee testEmployee = new Employee();
-        testEmployee.setFirstName("John");
-        testEmployee.setLastName("Doe");
-        testEmployee.setDepartment("Engineering");
-        testEmployee.setPosition("Developer");
+    public void testCreateEmployeeDuplicate() {
+        Employee employee = new Employee();
+        when(employeeRepository.insert(any(Employee.class)))
+                .thenThrow(new DuplicateEntryException("duplicate"));
 
-        // Create checks
-        Employee createdEmployee = restTemplate.postForEntity(employeeUrl, testEmployee, Employee.class).getBody();
-
-        assertNotNull(createdEmployee.getEmployeeId());
-        assertEmployeeEquivalence(testEmployee, createdEmployee);
-
-
-        // Read checks
-        Employee readEmployee = restTemplate.getForEntity(employeeIdUrl, Employee.class, createdEmployee.getEmployeeId()).getBody();
-        assertEquals(createdEmployee.getEmployeeId(), readEmployee.getEmployeeId());
-        assertEmployeeEquivalence(createdEmployee, readEmployee);
-
-
-        // Update checks
-        readEmployee.setPosition("Development Manager");
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        Employee updatedEmployee =
-                restTemplate.exchange(employeeIdUrl,
-                        HttpMethod.PUT,
-                        new HttpEntity<Employee>(readEmployee, headers),
-                        Employee.class,
-                        readEmployee.getEmployeeId()).getBody();
-
-        assertEmployeeEquivalence(readEmployee, updatedEmployee);
+        assertThrows(DuplicateEntryException.class, () -> {
+            employeeService.create(employee);
+        });
     }
 
-    private static void assertEmployeeEquivalence(Employee expected, Employee actual) {
-        assertEquals(expected.getFirstName(), actual.getFirstName());
-        assertEquals(expected.getLastName(), actual.getLastName());
-        assertEquals(expected.getDepartment(), actual.getDepartment());
-        assertEquals(expected.getPosition(), actual.getPosition());
+    @Test
+    public void testReadEmployee() {
+        Employee employee = new Employee();
+
+        when(employeeRepository.findByEmployeeId(employee.getEmployeeId())).thenReturn(employee);
+
+        Employee result = employeeService.read(employee.getEmployeeId());
+
+        assertNotNull(result);
+        assertEquals(employee.getEmployeeId(), result.getEmployeeId());
+    }
+
+    @Test
+    public void testReadByEmployeeNotFound() {
+        when(employeeRepository.findByEmployeeId("a")).thenReturn(null);
+
+        assertThrows(EmployeeNotFoundException.class, () -> {
+            employeeService.read("a");
+        });
+    }
+
+    @Test
+    public void testUpdateEmployee() {
+        Employee employee = new Employee();
+        employee.setFirstName("John");
+        employee.setLastName("Doe");
+
+        when(employeeRepository.save(any(Employee.class))).thenReturn(employee);
+
+        Employee updatedEmployee = employeeService.update(employee);
+
+        assertNotNull(updatedEmployee);
+        assertEquals("John", updatedEmployee.getFirstName());
+        assertEquals("Doe", updatedEmployee.getLastName());
+
+        verify(employeeRepository, times(1)).save(employee);
     }
 }

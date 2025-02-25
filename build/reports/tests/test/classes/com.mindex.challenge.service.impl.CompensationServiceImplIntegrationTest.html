@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.mindex.challenge.service.impl.html">com.mindex.challenge.service.impl</a> &gt; CompensationServiceImplIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.188s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testCreateCompensationIntegration</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testReadByEmployeeCompensationNotFoundIntegration</td>
+<td class="success">0.013s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testReadByEmployeeIntegration</td>
+<td class="success">0.150s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-02-24T19:14:24.449-05:00  INFO 8872 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest]: CompensationServiceImplIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-24T19:14:24.452-05:00  INFO 8872 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest
+2025-02-24T19:14:24.501-05:00 DEBUG 8872 --- [o-auto-1-exec-5] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@361d759e]
+2025-02-24T19:14:24.502-05:00 DEBUG 8872 --- [o-auto-1-exec-5] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@361d759e]
+2025-02-24T19:14:24.518-05:00  INFO 8872 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : adding unique _id index for collection compensation
+2025-02-24T19:14:24.520-05:00  INFO 8872 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : created collection test.compensation
+2025-02-24T19:14:24.538-05:00 DEBUG 8872 --- [o-auto-1-exec-7] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@144b1503]
+2025-02-24T19:14:24.538-05:00 DEBUG 8872 --- [o-auto-1-exec-7] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@144b1503]
+2025-02-24T19:14:24.554-05:00 DEBUG 8872 --- [o-auto-1-exec-9] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@78b005ac]
+2025-02-24T19:14:24.555-05:00 DEBUG 8872 --- [o-auto-1-exec-9] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@78b005ac]
+2025-02-24T19:14:24.570-05:00 DEBUG 8872 --- [o-auto-1-exec-8] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T19:14:24.570-05:00 DEBUG 8872 --- [o-auto-1-exec-8] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+2025-02-24T19:14:24.590-05:00 DEBUG 8872 --- [-auto-1-exec-10] c.m.c.controller.CompensationController  : Received compensations get request for employee [b]
+2025-02-24T19:14:24.591-05:00 DEBUG 8872 --- [-auto-1-exec-10] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [b]
+2025-02-24T19:14:24.617-05:00 DEBUG 8872 --- [o-auto-1-exec-1] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@441d397a]
+2025-02-24T19:14:24.618-05:00 DEBUG 8872 --- [o-auto-1-exec-1] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@441d397a]
+2025-02-24T19:14:24.636-05:00 DEBUG 8872 --- [o-auto-1-exec-2] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T19:14:24.637-05:00 DEBUG 8872 --- [o-auto-1-exec-2] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.6</a> at Feb 24, 2025, 7:14:25 PM</p>
+</div>
+</div>
+</body>
+</html>

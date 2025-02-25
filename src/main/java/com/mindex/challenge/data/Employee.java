@@ -1,8 +1,13 @@
 package com.mindex.challenge.data;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+
 import java.util.List;
 
 public class Employee {
+    @Id
+    @Indexed(unique=true)
     private String employeeId;
     private String firstName;
     private String lastName;
@@ -60,4 +65,5 @@ public class Employee {
     public void setDirectReports(List<Employee> directReports) {
         this.directReports = directReports;
     }
+
 }

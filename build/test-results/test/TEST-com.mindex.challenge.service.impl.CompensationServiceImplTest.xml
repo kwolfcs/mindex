@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mindex.challenge.service.impl.CompensationServiceImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:14:24" hostname="LAPTOP-NCH72P9J" time="0.443">
+  <properties/>
+  <testcase name="testReadByEmployee" classname="com.mindex.challenge.service.impl.CompensationServiceImplTest" time="0.408"/>
+  <testcase name="testCreateCompensation" classname="com.mindex.challenge.service.impl.CompensationServiceImplTest" time="0.02"/>
+  <testcase name="testCreateCompensationDuplicate" classname="com.mindex.challenge.service.impl.CompensationServiceImplTest" time="0.009"/>
+  <testcase name="testReadByEmployeeCompensationNotFound" classname="com.mindex.challenge.service.impl.CompensationServiceImplTest" time="0.004"/>
+  <system-out><![CDATA[2025-02-24T19:14:25.068-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+2025-02-24T19:14:25.081-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@44723d95]
+2025-02-24T19:14:25.104-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@1ecf784f]
+2025-02-24T19:14:25.109-05:00 DEBUG 8872 --- [    Test worker] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
