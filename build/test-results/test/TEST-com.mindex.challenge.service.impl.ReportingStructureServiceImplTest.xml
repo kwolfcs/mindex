@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:54:57" hostname="LAPTOP-NCH72P9J" time="0.026">
+<testsuite name="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-02-25T04:18:04" hostname="LAPTOP-NCH72P9J" time="0.542">
   <properties/>
-  <testcase name="testNoReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.004"/>
-  <testcase name="testReportEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
-  <testcase name="testCycleDetection" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.006"/>
+  <testcase name="testNoReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.507"/>
+  <testcase name="testReportEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.007"/>
+  <testcase name="testCycleDetection" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.007"/>
   <testcase name="testWithReports" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
+  <testcase name="falseCycleDetection" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.006"/>
   <testcase name="testEmployeeNotFound" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.005"/>
-  <system-out><![CDATA[2025-02-24T19:54:57.218-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:54:57.223-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:54:57.228-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [A]
-2025-02-24T19:54:57.234-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [John Lennon]
-2025-02-24T19:54:57.239-05:00 DEBUG 8916 --- [    Test worker] c.m.c.s.i.ReportingStructureServiceImpl  : Getting reporting structure for id [nonexistent]
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

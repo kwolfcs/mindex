@@ -129,7 +129,7 @@ public class ReportingStructureServiceImplIntegrationTest {
         ResponseEntity<String> response = restTemplate.getForEntity(reportingStructureUrl, String.class, "a");
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
     }
-
+    
     @Test
     public void testReportEmployeeNotFoundIntegration() {
         Employee employeeA = new Employee();

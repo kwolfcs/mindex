@@ -111,6 +111,33 @@ public class ReportingStructureServiceImplTest {
     }
 
     @Test
+    public void falseCycleDetection() {
+        // more complex case where A has report B and C, and B has report C.
+        // Should work as it's not a 'cycle', and C should only be counted ONCE
+        Employee employeeA = new Employee();
+        employeeA.setEmployeeId("A");
+
+        Employee employeeB = new Employee();
+        employeeB.setEmployeeId("B");
+
+        Employee employeeC = new Employee();
+        employeeC.setEmployeeId("C");
+
+        ArrayList<Employee> reports = new ArrayList<>();
+        reports.add(employeeB);
+        reports.add(employeeC);
+
+        employeeA.setDirectReports(reports);
+        employeeB.setDirectReports(Collections.singletonList(employeeC));
+
+        when(employeeRepository.findByEmployeeId("A")).thenReturn(employeeA);
+        when(employeeRepository.findByEmployeeId("B")).thenReturn(employeeB);
+        when(employeeRepository.findByEmployeeId("C")).thenReturn(employeeC);
+
+        assertEquals(2, reportingStructureService.get("A").numberOfReports());
+    }
+
+    @Test
     public void testReportEmployeeNotFound() {
         // Create employee with non-existent direct report
         Employee employeeA = new Employee();

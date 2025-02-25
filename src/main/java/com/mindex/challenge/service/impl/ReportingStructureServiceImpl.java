@@ -38,6 +38,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
 
     private int findAllReports(Employee employee, Map<String, Integer> cache) {
         if (employee.getDirectReports() == null) {
+            cache.putIfAbsent(employee.getEmployeeId(), 0);
             return 0;
         }
 
@@ -60,7 +61,13 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
             if (fullReport == null) {
                 throw new IllegalStateException("Employee not found for ID: " + e.getEmployeeId());
             }
-            reportsNum++;
+
+            // only increment by one if report is unique - NOT counting duplicate entries here
+            // example: A has reports B and C, and B has report C
+            if (!cache.containsKey(fullReport.getEmployeeId())) {
+                reportsNum++;
+            }
+
             reportsNum += findAllReports(fullReport, cache);
         }
 

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.184s</div>
+<div class="counter">0.426s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">testCreateCompensationIntegration</td>
-<td class="success">0.029s</td>
+<td class="success">0.030s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testReadByEmployeeCompensationNotFoundIntegration</td>
-<td class="success">0.017s</td>
+<td class="success">0.019s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testReadByEmployeeIntegration</td>
-<td class="success">0.138s</td>
+<td class="success">0.377s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,24 +97,57 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-02-24T19:54:56.407-05:00  INFO 8916 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest]: CompensationServiceImplIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-02-24T19:54:56.409-05:00  INFO 8916 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest
-2025-02-24T19:54:56.454-05:00 DEBUG 8916 --- [o-auto-1-exec-6] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@202df07e]
-2025-02-24T19:54:56.455-05:00 DEBUG 8916 --- [o-auto-1-exec-6] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@202df07e]
-2025-02-24T19:54:56.471-05:00  INFO 8916 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : adding unique _id index for collection compensation
-2025-02-24T19:54:56.474-05:00  INFO 8916 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : created collection test.compensation
-2025-02-24T19:54:56.489-05:00 DEBUG 8916 --- [o-auto-1-exec-7] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@6f67983]
-2025-02-24T19:54:56.489-05:00 DEBUG 8916 --- [o-auto-1-exec-7] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@6f67983]
-2025-02-24T19:54:56.505-05:00 DEBUG 8916 --- [o-auto-1-exec-8] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@35dd6015]
-2025-02-24T19:54:56.505-05:00 DEBUG 8916 --- [o-auto-1-exec-8] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@35dd6015]
-2025-02-24T19:54:56.522-05:00 DEBUG 8916 --- [o-auto-1-exec-9] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
-2025-02-24T19:54:56.522-05:00 DEBUG 8916 --- [o-auto-1-exec-9] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
-2025-02-24T19:54:56.540-05:00 DEBUG 8916 --- [-auto-1-exec-10] c.m.c.controller.CompensationController  : Received compensations get request for employee [b]
-2025-02-24T19:54:56.540-05:00 DEBUG 8916 --- [-auto-1-exec-10] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [b]
-2025-02-24T19:54:56.568-05:00 DEBUG 8916 --- [o-auto-1-exec-2] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@4f2587a5]
-2025-02-24T19:54:56.568-05:00 DEBUG 8916 --- [o-auto-1-exec-2] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@4f2587a5]
-2025-02-24T19:54:56.592-05:00 DEBUG 8916 --- [o-auto-1-exec-1] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
-2025-02-24T19:54:56.592-05:00 DEBUG 8916 --- [o-auto-1-exec-1] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+<pre>2025-02-24T23:18:09.458-05:00  INFO 15900 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest]: CompensationServiceImplIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-24T23:18:09.478-05:00  INFO 15900 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.CompensationServiceImplIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2025-02-24T23:18:09.515-05:00  INFO 15900 --- [    Test worker] i.CompensationServiceImplIntegrationTest : Starting CompensationServiceImplIntegrationTest using Java 17.0.12 with PID 15900 (started by 15kwo in C:\Users\15kwo\mindex_workspace\mindex-code-challenge)
+2025-02-24T23:18:09.515-05:00 DEBUG 15900 --- [    Test worker] i.CompensationServiceImplIntegrationTest : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-24T23:18:09.515-05:00  INFO 15900 --- [    Test worker] i.CompensationServiceImplIntegrationTest : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-02-24T23:18:09.695-05:00  INFO 15900 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-02-24T23:18:09.703-05:00  INFO 15900 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 MongoDB repository interfaces.
+2025-02-24T23:18:09.935-05:00  INFO 15900 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-02-24T23:18:09.955-05:00  INFO 15900 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-24T23:18:09.956-05:00  INFO 15900 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-24T23:18:10.034-05:00  INFO 15900 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-24T23:18:10.035-05:00  INFO 15900 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 516 ms
+2025-02-24T23:18:10.146-05:00  INFO 15900 --- [    Test worker] de.bwaldvogel.mongo.MongoServer          : started MongoServer(port: 52989, ssl: false)
+2025-02-24T23:18:10.150-05:00  INFO 15900 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {&quot;driver&quot;: {&quot;name&quot;: &quot;mongo-java-driver|sync&quot;, &quot;version&quot;: &quot;4.11.1&quot;}, &quot;os&quot;: {&quot;type&quot;: &quot;Windows&quot;, &quot;name&quot;: &quot;Windows 10&quot;, &quot;architecture&quot;: &quot;amd64&quot;, &quot;version&quot;: &quot;10.0&quot;}, &quot;platform&quot;: &quot;Java/Oracle Corporation/17.0.12+8-LTS-286&quot;} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@6181bc4a, com.mongodb.Jep395RecordCodecProvider@70485aa, com.mongodb.KotlinCodecProvider@4bf8b77]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:52989], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-02-24T23:18:10.152-05:00  INFO 15900 --- [-server-worker1] d.b.mongo.wire.MongoWireProtocolHandler  : client [id: 0xdaa045c6, L:/127.0.0.1:52989 - R:/127.0.0.1:52990] connected
+2025-02-24T23:18:10.153-05:00  INFO 15900 --- [-server-worker2] d.b.mongo.wire.MongoWireProtocolHandler  : client [id: 0xa83e9b35, L:/127.0.0.1:52989 - R:/127.0.0.1:52991] connected
+2025-02-24T23:18:10.163-05:00  INFO 15900 --- [127.0.0.1:52989] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:52989, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=11168700}
+2025-02-24T23:18:10.252-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.wire.MongoWireProtocolHandler  : client [id: 0x7d0de391, L:/127.0.0.1:52989 - R:/127.0.0.1:52992] connected
+2025-02-24T23:18:10.258-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.backend.AbstractMongoBackend   : created database test
+2025-02-24T23:18:10.259-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : adding unique _id index for collection employee
+2025-02-24T23:18:10.259-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : created collection test.employee
+2025-02-24T23:18:10.388-05:00  INFO 15900 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 52993 (http) with context path ''
+2025-02-24T23:18:10.392-05:00  INFO 15900 --- [    Test worker] i.CompensationServiceImplIntegrationTest : Started CompensationServiceImplIntegrationTest in 0.909 seconds (process running for 8.405)
+2025-02-24T23:18:10.563-05:00  INFO 15900 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24T23:18:10.564-05:00  INFO 15900 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-24T23:18:10.565-05:00  INFO 15900 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-24T23:18:10.651-05:00 DEBUG 15900 --- [o-auto-1-exec-2] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@5618b265]
+2025-02-24T23:18:10.651-05:00 DEBUG 15900 --- [o-auto-1-exec-2] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@5618b265]
+2025-02-24T23:18:10.665-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : adding unique _id index for collection compensation
+2025-02-24T23:18:10.667-05:00  INFO 15900 --- [-server-worker3] d.b.mongo.backend.AbstractMongoDatabase  : created collection test.compensation
+2025-02-24T23:18:10.698-05:00 DEBUG 15900 --- [o-auto-1-exec-1] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@3f8ff3a8]
+2025-02-24T23:18:10.700-05:00 DEBUG 15900 --- [o-auto-1-exec-1] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@3f8ff3a8]
+2025-02-24T23:18:10.712-05:00 DEBUG 15900 --- [o-auto-1-exec-3] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@2deb210d]
+2025-02-24T23:18:10.712-05:00 DEBUG 15900 --- [o-auto-1-exec-3] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@2deb210d]
+2025-02-24T23:18:10.738-05:00 DEBUG 15900 --- [o-auto-1-exec-4] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T23:18:10.739-05:00 DEBUG 15900 --- [o-auto-1-exec-4] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
+2025-02-24T23:18:10.760-05:00 DEBUG 15900 --- [o-auto-1-exec-5] c.m.c.controller.CompensationController  : Received compensations get request for employee [b]
+2025-02-24T23:18:10.761-05:00 DEBUG 15900 --- [o-auto-1-exec-5] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [b]
+2025-02-24T23:18:10.792-05:00 DEBUG 15900 --- [o-auto-1-exec-7] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@416f27ff]
+2025-02-24T23:18:10.793-05:00 DEBUG 15900 --- [o-auto-1-exec-7] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@416f27ff]
+2025-02-24T23:18:10.813-05:00 DEBUG 15900 --- [o-auto-1-exec-8] c.m.c.controller.CompensationController  : Received compensations get request for employee [a]
+2025-02-24T23:18:10.813-05:00 DEBUG 15900 --- [o-auto-1-exec-8] c.m.c.s.impl.CompensationServiceImpl     : Reading all compensations for employee with id [a]
 </pre>
 </span>
 </div>
@@ -126,7 +159,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at Feb 24, 2025, 7:54:57 PM</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at Feb 24, 2025, 11:18:11 PM</p>
 </div>
 </div>
 </body>
